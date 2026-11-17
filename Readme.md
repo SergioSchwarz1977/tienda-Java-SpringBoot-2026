@@ -196,22 +196,22 @@ Actualiza `nombre`, `descripcion`, `categoria`, `precio` y `stock`. El **body es
 
 ```bash
 # Listar todos los productos
-curl http://localhost:8083/productos/listar
+curl http://localhost:8080/productos/listar
 
 # Listar con el nombre de la categoría como texto
-curl http://localhost:8083/productos/listarConCategoria
+curl http://localhost:8080/productos/listarConCategoria
 
 # Obtener un producto por id
-curl http://localhost:8083/productos/1
+curl http://localhost:8080/productos/1
 
 # Crear un producto
-curl -X POST http://localhost:8083/productos/crear -H "Content-Type: application/json" -d "{\"nombre\":\"Laptop\",\"descripcion\":\"Laptop gaming\",\"precio\":1500.0,\"stock\":10,\"categoria\":{\"id\":1}}"
+curl -X POST http://localhost:8080/productos/crear -H "Content-Type: application/json" -d "{\"nombre\":\"Laptop\",\"descripcion\":\"Laptop gaming\",\"precio\":1500.0,\"stock\":10,\"categoria\":{\"id\":1}}"
 
 # Actualizar un producto
-curl -X PUT http://localhost:8083/productos/actualizar/1 -H "Content-Type: application/json" -d "{\"nombre\":\"Laptop Pro\",\"descripcion\":\"Laptop gaming 16GB\",\"precio\":1800.0,\"stock\":5,\"categoria\":{\"id\":2}}"
+curl -X PUT http://localhost:8080/productos/actualizar/1 -H "Content-Type: application/json" -d "{\"nombre\":\"Laptop Pro\",\"descripcion\":\"Laptop gaming 16GB\",\"precio\":1800.0,\"stock\":5,\"categoria\":{\"id\":2}}"
 
 # Eliminar un producto
-curl -X DELETE http://localhost:8083/productos/eliminar/1
+curl -X DELETE http://localhost:8080/productos/eliminar/1
 ```
 
 ---

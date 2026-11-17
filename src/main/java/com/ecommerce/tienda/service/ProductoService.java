@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.ecommerce.tienda.dto.DTOProductoCategoria;
 import com.ecommerce.tienda.entity.Producto;
+import com.ecommerce.tienda.repository.CategoriaRepository;
 import com.ecommerce.tienda.repository.ProductoRepository;
 
 import org.springframework.stereotype.Service;
@@ -11,11 +12,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductoService {
     private final ProductoRepository productoRepository;
-    private final CategoriaService categoriaService;
+    private final CategoriaRepository categoriaRepository;
 
-    public ProductoService(ProductoRepository productoRepository, CategoriaService categoriaService) {
+    public ProductoService(ProductoRepository productoRepository, CategoriaRepository categoriaRepository) {
         this.productoRepository = productoRepository;
-        this.categoriaService = categoriaService;
+        this.categoriaRepository = categoriaRepository; 
     }
 
     public List<DTOProductoCategoria> listarConCategoria() {
