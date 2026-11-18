@@ -1,5 +1,7 @@
 package com.ecommerce.tienda.service;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import com.ecommerce.tienda.entity.Login;
@@ -13,8 +15,12 @@ public class LoginService {
         this.loginRepository = loginRepository;
     }
 
-    public Login findById(int id) {
-        return loginRepository.findById(id).orElse(null);
+    public boolean validar(String usuario, String password) {
+        Optional<Login> login = loginRepository.findByUsuarioAndPassword(
+                usuario,
+                password);
+        System.out.println(login);
+        return login.isPresent();
     }
 
 }
